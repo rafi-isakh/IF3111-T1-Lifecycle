@@ -1,0 +1,18 @@
+package de.vogella.android.alarm;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Vibrator;
+import android.widget.Toast;
+
+public class MyBroadcastReceiver extends BroadcastReceiver{
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Toast.makeText(context, "Don't panic but your time is out!!!", Toast.LENGTH_LONG).show();
+        //vibration
+        Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(2000);
+    }
+}
